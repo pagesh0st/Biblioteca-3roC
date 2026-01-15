@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Biblioteca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .btn-eliminar {
+            background-color: #f44336;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        
+        .btn-eliminar:hover {
+            background-color: #da190b;
+        }
+        
+        .buscar-container {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Biblioteca Réplica Vicente Rocafuerte</h1>
+    
+    <div class="container">
+        <h2>Registrar Libro</h2>
+        <form id="formLibro">
+            <div class="form-group">
+                <label for="titulo">Titulo:</label>
+                <input type="text" id="titulo" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" required>
+                    <option value="">Seleccionar categoria</option>
+                    <option value="Ficcion">Ficcion</option>
+                    <option value="No Ficcion">No Ficcion</option>
+                    <option value="Ciencia">Ciencia</option>
+                    <option value="Historia">Historia</option>
+                    <option value="Literatura">Literatura</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="anio">Año de Publicacion:</label>
+                <input type="number" id="anio" min="1900" max="2025" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="disponible">Disponible:</label>
+                <select id="disponible" required>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            
+            <button type="submit">Agregar Libro</button>
+        </form>
+    </div>
+    
+    <div class="container">
+        <h2>Lista de Libros</h2>
+        
+        <div class="buscar-container">
+            <label for="buscar">Buscar:</label>
+            <input type="text" id="buscar" placeholder="Buscar por titulo o autor">
+        </div>
+        
+        <table id="tablaLibros">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Autor</th>
+                    <th>Categoria</th>
+                    <th>Año</th>
+                    <th>Disponible</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+            </tbody>
+        </table>
+    </div>
+
+    <p>Integrantes: Ariel Camba - Miguel Mercado - Jerry Villacis</p>
+
+    <script>
+        let libros = [];
+        
+        function cargarLibros() {
+            let librosGuardados = localStorage.getItem('libros');
+            if (librosGuardados) {
+                libros = JSON.parse(librosGuardados);
+                mostrarLibros(libros);
+            }
+        }
+        
+        function guardarLibros() {
+            localStorage.setItem('libros', JSON.stringify(libros));
+        }
+        
+        function agregarLibro(event) {
+            event.preventDefault();
+            
+            let libro = {
+                id: Date.now(),
+                titulo: document.getElementById('titulo').value,
+                autor: document.getElementById('autor').value,
+                categoria: document.getElementById('categoria').value,
+                anio: document.getElementById('anio').value,
+                disponible: document.getElementById('disponible').value
+            };
+            
+            libros.push(libro);
+            guardarLibros();
+            mostrarLibros(libros);
+            
+            document.getElementById('formLibro').reset();
+        }
+        
+        function eliminarLibro(id) {
+            libros = libros.filter(libro => libro.id !== id);
+            guardarLibros();
+            mostrarLibros(libros);
+        }
+        
+        function mostrarLibros(librosMostrar) {
+            let cuerpoTabla = document.getElementById('cuerpoTabla');
+            cuerpoTabla.innerHTML = '';
+            
+            if (librosMostrar.length === 0) {
+                cuerpoTabla.innerHTML = '<tr><td colspan="6" style="text-align: center;">No hay libros registrados</td></tr>';
+                return;
+            }
+            
+            librosMostrar.forEach(libro => {
+                let fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${libro.titulo}</td>
+                    <td>${libro.autor}</td>
+                    <td>${libro.categoria}</td>
+                    <td>${libro.anio}</td>
+                    <td>${libro.disponible}</td>
+                    <td>
+                        <button class="btn-eliminar" onclick="eliminarLibro(${libro.id})">Eliminar</button>
+                    </td>
+                `;
+                cuerpoTabla.appendChild(fila);
+            });
+        }
+        
+        function buscarLibros() {
+            let busqueda = document.getElementById('buscar').value.toLowerCase();
+            let librosFiltrados = libros.filter(libro => 
+                libro.titulo.toLowerCase().includes(busqueda) || 
+                libro.autor.toLowerCase().includes(busqueda)
+            );
+            mostrarLibros(librosFiltrados);
+        }
+        
+        document.getElementById('formLibro').addEventListener('submit', agregarLibro);
+        document.getElementById('buscar').addEventListener('input', buscarLibros);
+        
+        cargarLibros();
+    </script>
+</body>
+</html>
