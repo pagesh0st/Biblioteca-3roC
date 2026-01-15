@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Base de Datos - Biblioteca</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #e8e8e8;
+            color: #333;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 4px solid #34495e;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .header h2 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #34495e;
+            overflow-x: auto;
+        }
+
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            background-color: #34495e;
+            color: white;
+            border: none;
+            font-size: 15px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .tab:hover {
+            background-color: #2c3e50;
+        }
+
+        .tab.active {
+            background-color: white;
+            color: #2c3e50;
+        }
+
+        .content {
+            display: none;
+            padding: 40px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+
+        .content h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .content ul {
+            margin-left: 40px;
+            margin-bottom: 15px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .index-list {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .index-list li {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .glossary-term {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .reference {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+
+        @media (max-width: 768px) {
+            .tabs {
+                flex-wrap: wrap;
+            }
+
+            .tab {
+                flex: 1 1 50%;
+                text-align: center;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Replica Vicente Rocafuerte</h1>
+        <h2>Proyecto de Base de Datos para Biblioteca</h2>
+    </div>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" onclick="openTab('indice')">Indice</button>
+            <button class="tab" onclick="openTab('resumen')">Resumen</button>
+            <button class="tab" onclick="openTab('introduccion')">Introduccion</button>
+            <button class="tab" onclick="openTab('descripcion')">Descripcion</button>
+            <button class="tab" onclick="openTab('arquitectura')">Arquitectura</button>
+            <button class="tab" onclick="openTab('glosario')">Glosario</button>
+            <button class="tab" onclick="openTab('linea')">Linea de Accion</button>
+            <button class="tab" onclick="openTab('recursos')">Recursos</button>
+            <button class="tab" onclick="openTab('cronograma')">Cronograma</button>
+            <button class="tab" onclick="openTab('conclusiones')">Conclusiones</button>
+            <button class="tab" onclick="openTab('recomendaciones')">Recomendaciones</button>
+            <button class="tab" onclick="openTab('referencias')">Referencias</button>
+        </div>
+
+        <div id="indice" class="content active">
+            <h2>Indice</h2>
+            <ul class="index-list">
+                <li>1. Resumen</li>
+                <li>2. Introduccion</li>
+                <li>3. Descripcion General del Proyecto de Base de Datos de Biblioteca</li>
+                <li>4. Arquitectura y Metodologia Tecnica</li>
+                <li>5. Glosario de Terminos Clave</li>
+                <li>6. Linea de Accion</li>
+                <li>7. Recursos Utilizados</li>
+                <li>8. Cronograma de Actividades</li>
+                <li>9. Conclusiones del Proyecto</li>
+                <li>10. Recomendaciones</li>
+                <li>11. Referencias Bibliograficas</li>
+            </ul>
+        </div>
+
+        <div id="resumen" class="content">
+            <h2>1. Resumen</h2>
+            <p>El presente proyecto tiene como objetivo implementar un sistema de gestion de bases de datos para la biblioteca de la Institucion Educativa Replica Vicente Rocafuerte, con el fin de modernizar la administracion de los recursos bibliograficos y mejorar el acceso a la informacion.</p>
+            <p>Para el desarrollo del proyecto se utilizo una metodologia descriptiva y organizada en etapas, que incluyo la recopilacion de informacion bibliografica, el diseño de la estructura de la base de datos y la planificacion del acceso a los recursos por parte de los usuarios.</p>
+            <p>Como resultado, se propone un sistema que permite la digitalizacion del catalogo, la optimizacion de los procesos de inventario y prestamos, y una mejora significativa en la busqueda de informacion. En conclusion, la implementacion de esta base de datos fortalece el apoyo academico y contribuye a una gestion bibliotecaria mas eficiente.</p>
+        </div>
+
+        <div id="introduccion" class="content">
+            <h2>2. Introduccion</h2>
+            <p>En la actualidad, el uso de herramientas tecnologicas en el ambito educativo se ha vuelto fundamental para garantizar un acceso oportuno y organizado a la informacion. Las bibliotecas, como espacios de apoyo academico, requieren sistemas modernos que faciliten la gestion de sus recursos y respondan a las necesidades de la comunidad educativa.</p>
+            <p>El presente documento describe el desarrollo de un proyecto orientado a la implementacion de una base de datos para la biblioteca institucional. Este sistema busca reemplazar los procesos manuales por una plataforma digital que permita organizar, almacenar y consultar los recursos bibliograficos de manera eficiente, segura y accesible.</p>
+        </div>
+
+        <div id="descripcion" class="content">
+            <h2>3. Descripcion General del Proyecto de Base de Datos de Biblioteca</h2>
+            <p>El proyecto consiste en el diseño e implementacion de una base de datos destinada a centralizar la informacion de los recursos bibliograficos y de los usuarios de la biblioteca. Su proposito principal es mejorar la organizacion interna y facilitar el acceso a los materiales disponibles.</p>
+            <p>Mediante este sistema, se pretende optimizar los procesos de registro, control y consulta de libros, permitiendo una administracion mas ordenada y confiable de la informacion.</p>
+            
+            <h3>3.1 Componentes Principales del Proyecto</h3>
+            <ul>
+                <li><strong>Digitalizacion y Catalogacion:</strong> Conversion de los registros de libros y materiales bibliograficos a formato digital, permitiendo su clasificacion y busqueda.</li>
+                <li><strong>Gestion Automatizada:</strong> Organizacion de los procesos de prestamo y devolucion de libros, reduciendo errores y mejorando el control del inventario.</li>
+                <li><strong>Experiencia de Usuario:</strong> Acceso sencillo a la informacion mediante una interfaz clara y de facil uso para estudiantes y docentes.</li>
+                <li><strong>Seguridad de la Informacion:</strong> Proteccion de los datos registrados, garantizando su integridad y correcta administracion.</li>
+            </ul>
+        </div>
+
+        <div id="arquitectura" class="content">
+            <h2>4. Arquitectura y Metodologia Tecnica</h2>
+            <p>La base de datos de la biblioteca se desarrollara utilizando una estructura de tipo relacional, adecuada para el manejo ordenado de la informacion bibliografica y de los usuarios. La informacion se organizara en tablas que permitiran relacionar libros, autores, categorias y prestamos.</p>
+            <p>El sistema estara orientado al uso academico e incluira libros de texto, material de consulta y recursos educativos proporcionados por la institucion. El acceso se realizara mediante credenciales basicas para estudiantes y docentes, permitiendo consultar la disponibilidad de los recursos y registrar prestamos.</p>
+            <p>Para el desarrollo del proyecto se aplico una metodologia de trabajo secuencial, que incluyo la planificacion, recopilacion de informacion, diseño de la base de datos y revision del contenido, asegurando que el sistema cumpla con los objetivos propuestos.</p>
+        </div>
+
+        <div id="glosario" class="content">
+            <h2>5. Glosario de Terminos Clave</h2>
+            <p><span class="glossary-term">Base de Datos (BD):</span> Conjunto organizado de informacion almacenada de forma digital.</p>
+            <p><span class="glossary-term">Sistema de Gestion de Bases de Datos (SGBD):</span> Programa informatico que permite crear y administrar bases de datos.</p>
+            <p><span class="glossary-term">Digitalizacion:</span> Proceso de conversion de informacion fisica a formato digital.</p>
+            <p><span class="glossary-term">Catalogacion:</span> Registro ordenado de los datos principales de los libros y recursos bibliograficos.</p>
+            <p><span class="glossary-term">Prestamo:</span> Procedimiento mediante el cual un usuario accede temporalmente a un recurso de la biblioteca.</p>
+        </div>
+
+        <div id="linea" class="content">
+            <h2>6. Linea de Accion</h2>
+            <p>La implementacion de la base de datos permitira mejorar el servicio que ofrece la biblioteca a la comunidad educativa. Los estudiantes y docentes podran acceder a la informacion mediante un sistema organizado, utilizando credenciales asignadas por la institucion.</p>
+            <p>Este sistema facilitara la consulta del catalogo, el control de prestamos y la disponibilidad de los libros, contribuyendo a un uso mas eficiente de los recursos y fortaleciendo el proceso de enseñanza y aprendizaje.</p>
+        </div>
+
+        <div id="recursos" class="content">
+            <h2>7. Recursos Utilizados</h2>
+            <p>Para el desarrollo del proyecto se utilizaron equipos informaticos, programas de ofimatica para la elaboracion de documentos, y herramientas digitales para la organizacion de la informacion bibliografica. Asimismo, se emplearon fuentes de consulta en linea que sirvieron de apoyo para la definicion de conceptos y la estructuracion del proyecto.</p>
+        </div>
+
+        <div id="cronograma" class="content">
+            <h2>8. Cronograma de Actividades</h2>
+            <p>El proyecto se desarrollo en varias etapas. Inicialmente se realizo la recopilacion y clasificacion de la informacion bibliografica. Posteriormente, se diseño la estructura de la base de datos y se organizaron los registros de los libros. Finalmente, se reviso el contenido y se efectuaron ajustes para mejorar la presentacion y funcionamiento del sistema.</p>
+        </div>
+
+        <div id="conclusiones" class="content">
+            <h2>9. Conclusiones del Proyecto</h2>
+            <p>La implementacion del proyecto de base de datos de biblioteca permitio organizar de manera mas eficiente los recursos bibliograficos de la institucion. El sistema propuesto contribuye a mejorar el acceso a la informacion, optimizar la gestion de los prestamos y fortalecer el apoyo academico brindado a estudiantes y docentes.</p>
+        </div>
+
+        <div id="recomendaciones" class="content">
+            <h2>10. Recomendaciones</h2>
+            <p>Se recomienda mantener actualizada la informacion registrada en la base de datos, capacitar al personal encargado de su uso y ampliar progresivamente el catalogo de recursos disponibles. Asimismo, es importante realizar revisiones periodicas del sistema para garantizar su correcto funcionamiento.</p>
+        </div>
+
+        <div id="referencias" class="content">
+            <h2>11. Referencias Bibliograficas</h2>
+            <p class="reference">Arimetrics. (s.f.). Base de datos. https://www.arimetrics.com/glosario-digital/base-de-datos/</p>
+            <p class="reference">University of Cape Town Libraries. (s.f.). Databases. https://uct.libguides.com/az/databases</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i;
+            var contents = document.getElementsByClassName("content");
+            for (i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            
+            var tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
