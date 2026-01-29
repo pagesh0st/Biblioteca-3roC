@@ -1,0 +1,29 @@
+[
+    {
+        "id": "PRES-001",
+        "libroId": "LIB-044",
+        "libroTitulo": "Física para la ciencia",
+        "usuarioId": "USR-001",
+        "usuarioNombre": "María González",
+        "fechaPrestamo": "2026-01-15",
+        "fechaDevolucion": "2026-01-29"
+    },
+    {
+        "id": "PRES-002",
+        "libroId": "LIB-041",
+        "libroTitulo": "Cálculo de una variable",
+        "usuarioId": "USR-003",
+        "usuarioNombre": "Ana Rodríguez",
+        "fechaPrestamo": "2026-01-18",
+        "fechaDevolucion": "2026-02-01"
+    },
+    {
+        "id": "PRES-003",
+        "libroId": "LIB-038",
+        "libroTitulo": "La casa de los espíritus",
+        "usuarioId": "USR-003",
+        "usuarioNombre": "Ana Rodríguez",
+        "fechaPrestamo": "2026-01-20",
+        "fechaDevolucion": "2026-02-03"
+    }
+]

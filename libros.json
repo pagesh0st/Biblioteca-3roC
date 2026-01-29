@@ -1,0 +1,82 @@
+[
+    {
+        "id": "LIB-045",
+        "titulo": "Cien años de soledad",
+        "autor": "Gabriel García Márquez",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327881361i/320.jpg"
+    },
+    {
+        "id": "LIB-044",
+        "titulo": "Física para la ciencia",
+        "autor": "Paul A. Tipler",
+        "categoria": "Ciencias",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1426683591i/1508909.jpg"
+    },
+    {
+        "id": "LIB-043",
+        "titulo": "El principito",
+        "autor": "Antoine de Saint-Exupéry",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1367545443i/157993.jpg"
+    },
+    {
+        "id": "LIB-042",
+        "titulo": "Don Quijote de la Mancha",
+        "autor": "Miguel de Cervantes",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546112331i/3836.jpg"
+    },
+    {
+        "id": "LIB-041",
+        "titulo": "Cálculo de una variable",
+        "autor": "James Stewart",
+        "categoria": "Matemáticas",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1347650203i/229634.jpg"
+    },
+    {
+        "id": "LIB-040",
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg"
+    },
+    {
+        "id": "LIB-039",
+        "titulo": "Rayuela",
+        "autor": "Julio Cortázar",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388368348i/428791.jpg"
+    },
+    {
+        "id": "LIB-038",
+        "titulo": "La casa de los espíritus",
+        "autor": "Isabel Allende",
+        "categoria": "Ficción",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1629159027i/9328.jpg"
+    },
+    {
+        "id": "LIB-037",
+        "titulo": "Química General",
+        "autor": "Raymond Chang",
+        "categoria": "Ciencias",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1390089084i/414674.jpg"
+    },
+    {
+        "id": "LIB-036",
+        "titulo": "El amor en los tiempos del cólera",
+        "autor": "Gabriel García Márquez",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678719146i/9712.jpg"
+    }
+]

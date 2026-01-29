@@ -1,0 +1,26 @@
+[
+    {
+        "id": "USR-001",
+        "nombre": "María González",
+        "cedula": "1750123456",
+        "email": "maria@mail.com",
+        "telefono": "0987654321",
+        "prestamosActivos": 1
+    },
+    {
+        "id": "USR-002",
+        "nombre": "Carlos Pérez",
+        "cedula": "1750234567",
+        "email": "carlos@mail.com",
+        "telefono": "0987654322",
+        "prestamosActivos": 0
+    },
+    {
+        "id": "USR-003",
+        "nombre": "Ana Rodríguez",
+        "cedula": "1750345678",
+        "email": "ana@mail.com",
+        "telefono": "0987654323",
+        "prestamosActivos": 2
+    }
+]
