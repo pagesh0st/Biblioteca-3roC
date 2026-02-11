@@ -78,5 +78,285 @@
         "categoria": "Ficción",
         "estado": "Disponible",
         "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678719146i/9712.jpg"
+    },
+    {
+        "id": "LIB-035",
+        "titulo": "Clean Code",
+        "autor": "Robert C. Martin",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1436202607i/3735293.jpg"
+    },
+    {
+        "id": "LIB-034",
+        "titulo": "Crimen y castigo",
+        "autor": "Fiódor Dostoyevski",
+        "categoria": "Ficción",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1382846449i/7144.jpg"
+    },
+    {
+        "id": "LIB-033",
+        "titulo": "Introduction to Algorithms",
+        "autor": "Thomas H. Cormen",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387741681i/108986.jpg"
+    },
+    {
+        "id": "LIB-032",
+        "titulo": "La metamorfosis",
+        "autor": "Franz Kafka",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1359061917i/485894.jpg"
+    },
+    {
+        "id": "LIB-031",
+        "titulo": "Design Patterns",
+        "autor": "Erich Gamma",
+        "categoria": "Tecnología",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348027904i/85009.jpg"
+    },
+    {
+        "id": "LIB-030",
+        "titulo": "Orgullo y prejuicio",
+        "autor": "Jane Austen",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg"
+    },
+    {
+        "id": "LIB-029",
+        "titulo": "El código Da Vinci",
+        "autor": "Dan Brown",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579621267i/968.jpg"
+    },
+    {
+        "id": "LIB-028",
+        "titulo": "JavaScript: The Good Parts",
+        "autor": "Douglas Crockford",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1328834793i/2998152.jpg"
+    },
+    {
+        "id": "LIB-027",
+        "titulo": "Los miserables",
+        "autor": "Victor Hugo",
+        "categoria": "Ficción",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1411852091i/24280.jpg"
+    },
+    {
+        "id": "LIB-026",
+        "titulo": "Python Crash Course",
+        "autor": "Eric Matthes",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1437767598i/23241059.jpg"
+    },
+    {
+        "id": "LIB-025",
+        "titulo": "El gran Gatsby",
+        "autor": "F. Scott Fitzgerald",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg"
+    },
+    {
+        "id": "LIB-024",
+        "titulo": "Artificial Intelligence: A Modern Approach",
+        "autor": "Stuart Russell",
+        "categoria": "Tecnología",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1483181524i/27543.jpg"
+    },
+    {
+        "id": "LIB-023",
+        "titulo": "La Odisea",
+        "autor": "Homero",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1390173285i/1381.jpg"
+    },
+    {
+        "id": "LIB-022",
+        "titulo": "The Pragmatic Programmer",
+        "autor": "Andrew Hunt",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1401432508i/4099.jpg"
+    },
+    {
+        "id": "LIB-021",
+        "titulo": "La sombra del viento",
+        "autor": "Carlos Ruiz Zafón",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327868566i/1232.jpg"
+    },
+    {
+        "id": "LIB-020",
+        "titulo": "Database System Concepts",
+        "autor": "Abraham Silberschatz",
+        "categoria": "Tecnología",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1386925292i/161305.jpg"
+    },
+    {
+        "id": "LIB-019",
+        "titulo": "El Señor de los Anillos",
+        "autor": "J.R.R. Tolkien",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1566425108i/33.jpg"
+    },
+    {
+        "id": "LIB-018",
+        "titulo": "Eloquent JavaScript",
+        "autor": "Marijn Haverbeke",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1308260856i/8910666.jpg"
+    },
+    {
+        "id": "LIB-017",
+        "titulo": "Cumbres borrascosas",
+        "autor": "Emily Brontë",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1587655903i/6185.jpg"
+    },
+    {
+        "id": "LIB-016",
+        "titulo": "Computer Networks",
+        "autor": "Andrew S. Tanenbaum",
+        "categoria": "Tecnología",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1391032549i/166190.jpg"
+    },
+    {
+        "id": "LIB-015",
+        "titulo": "Fahrenheit 451",
+        "autor": "Ray Bradbury",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1383718290i/13079982.jpg"
+    },
+    {
+        "id": "LIB-014",
+        "titulo": "Learning React",
+        "autor": "Alex Banks",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1493267857i/34477488.jpg"
+    },
+    {
+        "id": "LIB-013",
+        "titulo": "Matar un ruiseñor",
+        "autor": "Harper Lee",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553383690i/2657.jpg"
+    },
+    {
+        "id": "LIB-012",
+        "titulo": "Clean Architecture",
+        "autor": "Robert C. Martin",
+        "categoria": "Tecnología",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1471680093i/18043011.jpg"
+    },
+    {
+        "id": "LIB-011",
+        "titulo": "Anna Karenina",
+        "autor": "León Tolstói",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1601352433i/15823480.jpg"
+    },
+    {
+        "id": "LIB-010",
+        "titulo": "Operating System Concepts",
+        "autor": "Abraham Silberschatz",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1390932006i/83833.jpg"
+    },
+    {
+        "id": "LIB-009",
+        "titulo": "La divina comedia",
+        "autor": "Dante Alighieri",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1389696766i/6656.jpg"
+    },
+    {
+        "id": "LIB-008",
+        "titulo": "Deep Learning",
+        "autor": "Ian Goodfellow",
+        "categoria": "Tecnología",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1483212693i/24072897.jpg"
+    },
+    {
+        "id": "LIB-007",
+        "titulo": "Hamlet",
+        "autor": "William Shakespeare",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1351051208i/1420.jpg"
+    },
+    {
+        "id": "LIB-006",
+        "titulo": "You Don't Know JS",
+        "autor": "Kyle Simpson",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1424714896i/25136217.jpg"
+    },
+    {
+        "id": "LIB-005",
+        "titulo": "Pedro Páramo",
+        "autor": "Juan Rulfo",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1633444774i/59165073.jpg"
+    },
+    {
+        "id": "LIB-004",
+        "titulo": "Head First Design Patterns",
+        "autor": "Eric Freeman",
+        "categoria": "Tecnología",
+        "estado": "Prestado",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1408728536i/58128.jpg"
+    },
+    {
+        "id": "LIB-003",
+        "titulo": "El conde de Montecristo",
+        "autor": "Alexandre Dumas",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1611834134i/7126.jpg"
+    },
+    {
+        "id": "LIB-002",
+        "titulo": "Refactoring",
+        "autor": "Martin Fowler",
+        "categoria": "Tecnología",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1386925632i/44936.jpg"
+    },
+    {
+        "id": "LIB-001",
+        "titulo": "Ficciones",
+        "autor": "Jorge Luis Borges",
+        "categoria": "Ficción",
+        "estado": "Disponible",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546112331i/426504.jpg"
     }
 ]

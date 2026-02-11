@@ -24,6 +24,7 @@
             <div class="menu-links">
                 <a href="#" class="menu-link active" data-section="inicio">INICIO</a>
                 <a href="#" class="menu-link" data-section="catalogo">CATALOGO</a>
+                <a href="#" class="menu-link" data-section="agregar-libro">AGREGAR LIBRO</a>
                 <a href="#" class="menu-link" data-section="prestamos">PRESTAMOS</a>
                 <a href="#" class="menu-link" data-section="usuarios">USUARIOS</a>
             </div>
@@ -123,6 +124,96 @@
 
                 <h3>Todos los libros</h3>
                 <table class="data-table" id="tablaCatalogo">
+                    <tr>
+                        <th>PORTADA</th>
+                        <th>ID</th>
+                        <th>TÍTULO</th>
+                        <th>AUTOR</th>
+                        <th>CATEGORÍA</th>
+                        <th>ESTADO</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="agregar-libro" class="section">
+                <h2>AGREGAR NUEVO LIBRO</h2>
+                
+                <div class="form-section">
+                    <h3>Información del Libro</h3>
+                    <div class="form-container">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Título del Libro: <span class="required">*</span></label>
+                                <input type="text" id="libroTitulo" class="text-input" placeholder="Ej: Cien años de soledad">
+                            </div>
+                            <div class="form-group">
+                                <label>Autor: <span class="required">*</span></label>
+                                <input type="text" id="libroAutor" class="text-input" placeholder="Ej: Gabriel García Márquez">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Categoría: <span class="required">*</span></label>
+                                <select id="libroCategoria" class="select-input">
+                                    <option value="">Seleccione una categoría</option>
+                                    <option value="Ficción">Ficción</option>
+                                    <option value="Tecnología">Tecnología</option>
+                                    <option value="Ciencias">Ciencias</option>
+                                    <option value="Matemáticas">Matemáticas</option>
+                                    <option value="Historia">Historia</option>
+                                    <option value="Filosofía">Filosofía</option>
+                                    <option value="Arte">Arte</option>
+                                    <option value="Biografía">Biografía</option>
+                                    <option value="Educación">Educación</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Estado Inicial: <span class="required">*</span></label>
+                                <select id="libroEstado" class="select-input">
+                                    <option value="Disponible">Disponible</option>
+                                    <option value="Prestado">Prestado</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>URL de la Portada:</label>
+                                <input type="url" id="libroImagen" class="text-input" placeholder="https://ejemplo.com/imagen.jpg">
+                                <small class="form-help">Opcional: URL de la imagen de portada del libro</small>
+                            </div>
+                        </div>
+
+                        <div class="preview-container" id="previewContainer" style="display: none;">
+                            <h4>Vista Previa</h4>
+                            <div class="preview-content">
+                                <img id="previewImagen" src="" alt="Vista previa" class="book-cover-preview">
+                                <div class="preview-details">
+                                    <p><strong>Título:</strong> <span id="previewTitulo">-</span></p>
+                                    <p><strong>Autor:</strong> <span id="previewAutor">-</span></p>
+                                    <p><strong>Categoría:</strong> <span id="previewCategoria">-</span></p>
+                                    <p><strong>Estado:</strong> <span id="previewEstado">-</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button id="btnAgregarLibro" class="btn-primary">
+                                <span class="btn-icon">📚</span> AGREGAR LIBRO
+                            </button>
+                            <button id="btnLimpiarFormulario" class="btn-secondary">
+                                <span class="btn-icon">🔄</span> LIMPIAR FORMULARIO
+                            </button>
+                        </div>
+                        
+                        <div id="libroMensaje" class="mensaje-resultado"></div>
+                    </div>
+                </div>
+
+                <h3>Últimos Libros Agregados</h3>
+                <table class="data-table" id="tablaUltimosLibros">
                     <tr>
                         <th>PORTADA</th>
                         <th>ID</th>

@@ -70,6 +70,8 @@ function inicializarNavegacion() {
                 cargarPrestamos();
             } else if (seccionId === 'usuarios') {
                 cargarUsuarios();
+            } else if (seccionId === 'agregar-libro') {
+                cargarUltimosLibros();
             }
         });
     });
@@ -207,6 +209,162 @@ function mostrarDetalleLibro(libro) {
             document.body.removeChild(modal);
         }
     });
+}
+
+// Función para generar el siguiente ID de libro
+function generarIdLibro() {
+    if (libros.length === 0) {
+        return 'LIB-001';
+    }
+    
+    // Obtener todos los números de ID
+    const numeros = libros.map(libro => {
+        const match = libro.id.match(/LIB-(\d+)/);
+        return match ? parseInt(match[1]) : 0;
+    });
+    
+    const maxNumero = Math.max(...numeros);
+    const nuevoNumero = maxNumero + 1;
+    
+    return `LIB-${String(nuevoNumero).padStart(3, '0')}`;
+}
+
+// Función para agregar un nuevo libro
+function agregarLibro() {
+    const titulo = document.getElementById('libroTitulo').value.trim();
+    const autor = document.getElementById('libroAutor').value.trim();
+    const categoria = document.getElementById('libroCategoria').value;
+    const estado = document.getElementById('libroEstado').value;
+    const imagen = document.getElementById('libroImagen').value.trim();
+    const mensaje = document.getElementById('libroMensaje');
+    
+    // Validaciones
+    if (!titulo || !autor || !categoria) {
+        mensaje.innerHTML = '<strong>Error:</strong> Por favor complete todos los campos obligatorios (Título, Autor y Categoría).';
+        mensaje.className = 'mensaje-resultado show error';
+        return;
+    }
+    
+    // Verificar si el libro ya existe
+    const libroExistente = libros.find(l => 
+        l.titulo.toLowerCase() === titulo.toLowerCase() && 
+        l.autor.toLowerCase() === autor.toLowerCase()
+    );
+    
+    if (libroExistente) {
+        mensaje.innerHTML = '<strong>Error:</strong> Ya existe un libro con ese título y autor en la biblioteca.';
+        mensaje.className = 'mensaje-resultado show error';
+        return;
+    }
+    
+    // Crear el nuevo libro
+    const nuevoLibro = {
+        id: generarIdLibro(),
+        titulo: titulo,
+        autor: autor,
+        categoria: categoria,
+        estado: estado,
+        imagen: imagen || 'https://via.placeholder.com/200x300?text=Sin+Portada'
+    };
+    
+    // Agregar a la lista
+    libros.push(nuevoLibro);
+    
+    // Limpiar el formulario
+    limpiarFormularioLibro();
+    
+    // Mostrar mensaje de éxito
+    mensaje.innerHTML = `<strong>✓ Éxito:</strong> Libro "${titulo}" agregado correctamente con ID ${nuevoLibro.id}.`;
+    mensaje.className = 'mensaje-resultado show success';
+    
+    // Actualizar estadísticas y tabla
+    actualizarEstadisticas();
+    cargarUltimosLibros();
+    
+    // Ocultar mensaje después de 5 segundos
+    setTimeout(() => {
+        mensaje.className = 'mensaje-resultado';
+    }, 5000);
+}
+
+// Función para limpiar el formulario de libro
+function limpiarFormularioLibro() {
+    document.getElementById('libroTitulo').value = '';
+    document.getElementById('libroAutor').value = '';
+    document.getElementById('libroCategoria').value = '';
+    document.getElementById('libroEstado').value = 'Disponible';
+    document.getElementById('libroImagen').value = '';
+    
+    // Ocultar vista previa
+    document.getElementById('previewContainer').style.display = 'none';
+    document.getElementById('libroMensaje').className = 'mensaje-resultado';
+}
+
+// Función para cargar los últimos 5 libros agregados
+function cargarUltimosLibros() {
+    const tabla = document.getElementById('tablaUltimosLibros');
+    
+    // Limpiar tabla
+    while (tabla.rows.length > 1) {
+        tabla.deleteRow(1);
+    }
+    
+    // Obtener los últimos 5 libros (invertir el orden)
+    const ultimosLibros = [...libros].slice(-5).reverse();
+    
+    if (ultimosLibros.length === 0) {
+        const fila = tabla.insertRow();
+        fila.innerHTML = '<td colspan="6" style="text-align: center; color: #718096;">No hay libros agregados todavía</td>';
+        return;
+    }
+    
+    ultimosLibros.forEach(libro => {
+        const fila = tabla.insertRow();
+        fila.innerHTML = `
+            <td><img src="${libro.imagen}" alt="${libro.titulo}" class="book-cover-small"></td>
+            <td>${libro.id}</td>
+            <td>${libro.titulo}</td>
+            <td>${libro.autor}</td>
+            <td>${libro.categoria}</td>
+            <td><span class="badge ${libro.estado === 'Disponible' ? 'disponible' : 'prestado'}">${libro.estado}</span></td>
+        `;
+        
+        fila.style.cursor = 'pointer';
+        fila.addEventListener('click', function() {
+            mostrarDetalleLibro(libro);
+        });
+    });
+}
+
+// Función para actualizar la vista previa en tiempo real
+function actualizarVistaPrevia() {
+    const titulo = document.getElementById('libroTitulo').value.trim();
+    const autor = document.getElementById('libroAutor').value.trim();
+    const categoria = document.getElementById('libroCategoria').value;
+    const estado = document.getElementById('libroEstado').value;
+    const imagen = document.getElementById('libroImagen').value.trim();
+    
+    if (titulo || autor || categoria || imagen) {
+        document.getElementById('previewContainer').style.display = 'block';
+        document.getElementById('previewTitulo').textContent = titulo || '-';
+        document.getElementById('previewAutor').textContent = autor || '-';
+        document.getElementById('previewCategoria').textContent = categoria || '-';
+        
+        const badgeClass = estado === 'Disponible' ? 'disponible' : 'prestado';
+        document.getElementById('previewEstado').innerHTML = `<span class="badge ${badgeClass}">${estado}</span>`;
+        
+        const imgPreview = document.getElementById('previewImagen');
+        if (imagen) {
+            imgPreview.src = imagen;
+            imgPreview.onerror = function() {
+                this.src = 'https://via.placeholder.com/150x225?text=Error+al+cargar';
+            };
+        } else {
+            imgPreview.src = 'https://via.placeholder.com/150x225?text=Vista+Previa';
+        }
+    } else {
+        document.getElementById('previewContainer').style.display = 'none';
+    }
 }
 
 function cargarPrestamos() {
@@ -430,6 +588,17 @@ document.addEventListener('DOMContentLoaded', async function() {
     document.getElementById('btnRegistrarPrestamo').addEventListener('click', registrarPrestamo);
     
     document.getElementById('btnRegistrarUsuario').addEventListener('click', registrarUsuario);
+    
+    // Event listeners para la sección de agregar libro
+    document.getElementById('btnAgregarLibro').addEventListener('click', agregarLibro);
+    document.getElementById('btnLimpiarFormulario').addEventListener('click', limpiarFormularioLibro);
+    
+    // Event listeners para la vista previa en tiempo real
+    document.getElementById('libroTitulo').addEventListener('input', actualizarVistaPrevia);
+    document.getElementById('libroAutor').addEventListener('input', actualizarVistaPrevia);
+    document.getElementById('libroCategoria').addEventListener('change', actualizarVistaPrevia);
+    document.getElementById('libroEstado').addEventListener('change', actualizarVistaPrevia);
+    document.getElementById('libroImagen').addEventListener('input', actualizarVistaPrevia);
     
     console.log('Sistema de Biblioteca Medardo Angel Silva - Iniciado');
 });

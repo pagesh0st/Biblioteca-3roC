@@ -204,6 +204,15 @@ body {
     margin-right: 25px;
 }
 
+.book-cover-preview {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-right: 20px;
+}
+
 /* Modal para detalles del libro */
 .modal-overlay {
     position: fixed;
@@ -325,6 +334,11 @@ body {
     font-size: 14px;
 }
 
+.required {
+    color: #f56565;
+    font-weight: bold;
+}
+
 .text-input {
     width: 100%;
     max-width: 400px;
@@ -338,6 +352,14 @@ body {
 .text-input:focus {
     outline: none;
     border-color: #ea9b66;
+}
+
+.form-help {
+    display: block;
+    margin-top: 5px;
+    color: #718096;
+    font-size: 12px;
+    font-style: italic;
 }
 
 .radio-group {
@@ -374,6 +396,8 @@ body {
 
 .btn-primary:hover {
     background-color: #38a169;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(72, 187, 120, 0.3);
 }
 
 .btn-secondary {
@@ -390,6 +414,8 @@ body {
 
 .btn-secondary:hover {
     background-color: #4a5568;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(113, 128, 150, 0.3);
 }
 
 .btn-danger {
@@ -406,6 +432,17 @@ body {
 
 .btn-danger:hover {
     background-color: #e53e3e;
+}
+
+.btn-icon {
+    margin-right: 5px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .search-results {
@@ -493,6 +530,11 @@ body {
     flex: 1;
 }
 
+.form-row .text-input,
+.form-row .select-input {
+    max-width: 100%;
+}
+
 .mensaje-resultado {
     margin-top: 15px;
     padding: 12px;
@@ -515,6 +557,45 @@ body {
     background-color: #fed7d7;
     color: #742a2a;
     border: 1px solid #fc8181;
+}
+
+/* Estilos para la vista previa */
+.preview-container {
+    margin-top: 25px;
+    padding: 20px;
+    background: white;
+    border: 2px solid #e0e7ef;
+    border-radius: 12px;
+}
+
+.preview-container h4 {
+    color: #ea9b66;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-bottom: 2px solid #e0e7ef;
+    padding-bottom: 8px;
+}
+
+.preview-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.preview-details {
+    flex: 1;
+}
+
+.preview-details p {
+    margin-bottom: 10px;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.preview-details strong {
+    color: #2d3748;
+    display: inline-block;
+    min-width: 90px;
 }
 
 .footer {
@@ -567,5 +648,25 @@ body {
         max-width: 200px;
         height: auto;
         margin: 0 auto 20px;
+    }
+
+    .preview-content {
+        flex-direction: column;
+    }
+
+    .book-cover-preview {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        margin: 0 auto 15px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
     }
 }
